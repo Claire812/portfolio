@@ -6,9 +6,13 @@ use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
+ *
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
+ * @Vich\Uploadable()
  */
 class Project
 {
@@ -54,6 +58,14 @@ class Project
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $poster;
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
+
+
 
     public function __construct()
     {
@@ -161,4 +173,25 @@ class Project
 
         return $this;
     }
+
+    /**
+     * @return File
+     */
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    /**
+     * @param File $posterFile
+     * @return Project
+     */
+    public function setPosterFile(File $posterFile = null): Project
+    {
+        $this->posterFile = $posterFile;
+        return $this;
+    }
+
+
+
 }
