@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectController!{% endblock %}
+{% block title %}Projets{% endblock %}
 
 {% block body %}
     <div class="project">
+
         <h1>Mes projets</h1>
+        <div class="search">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            {{ form_end(form) }}
+        </div>
         {% for project in projects %}
             <div class="one-project">
                 <div class="all-items">
@@ -16,7 +23,7 @@
                         {% endfor %}
                     </div>
                     <div>{{ project.date|date("d/m/Y") }}</div>
-                    <div>{{ project.link }}</div>
+                    <div><a href="{{ project.link }}">{{ project.link }}</a></div>
                     <div> {{ project.client }}</div>
                 </div>
             </div>

@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block body %}
+    <h1 class="title-admin">Espace admin</h1>
+
     <div class="admin">
+
         <div class="new-project">
             <h2>Ajouter un projet</h2>
             {% form_theme form 'bootstrap_4_layout.html.twig' %}
@@ -18,9 +21,30 @@
             {% form_theme form_language 'bootstrap_4_layout.html.twig' %}
             {{ form_start(form_language) }}
             {{ form_widget(form_language) }}
-            <button type="submit" class="btn mt-5">Ajouter un language</button>
+            <button type="submit" class="btn mt-5">Ajouter ce language</button>
             {{ form_end(form_language) }}
+            <div class="all-project">
+                <h2 class="language">Editer un projet</h2>
+                {% for project in projects %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_edit', {'id': project.id}) }}">{{ project.name }} </a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+            <div class="all-language">
+                <h2 class="language">Editer un language</h2>
+                {% for language in languages %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_edit_language', {'id': language.id}) }}">{{ language.name }} </a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
         </div>
+
     </div>
 
 {% endblock %}

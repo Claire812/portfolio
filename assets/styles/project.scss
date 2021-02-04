@@ -1,12 +1,40 @@
 .project {
-  background-color: black;
   color: white;
-  padding-bottom: 3%;
+
   h1 {
     text-align: center;
     margin-bottom: 5%;
     padding-top: 5%;
     color: #ffbe00e6;
+    font-size: 4em;
+  }
+  .search {
+    form{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-left: 10%;
+      margin-bottom: 5%;
+      #search_project_form_search {
+        width: 20em;
+        height: 2em;
+      }
+
+    }
+  }
+  .btn-outline-success {
+    color: #ffbe00e6;
+    border-color: #ffbe00e6;
+    justify-content: center;
+    margin-left: 1%;
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+  }
+  .btn-outline-success:hover {
+    color: white;
+    border-color: #ffbe00e6;
+    background-color: #ffbe00e6;
+    justify-content: flex-end;
   }
   .one-project{
     background-color: #242323;
@@ -24,6 +52,9 @@
     .all-items {
       justify-content: flex-end;
       width:100%;
+      a{
+        color: #ffbe00e6;
+      }
     }
 
   }

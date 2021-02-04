@@ -13,12 +13,12 @@
 .pres-content{
   display: flex;
   justify-content: center;
-  background-color: #1d1d1d;
 
   .presentation{
     background-color: #242323;
     width:70%;
     border-style: dotted;
+    box-shadow: 0 0 20px #eee;
     margin-top: 5%;
     margin-bottom: 10%;
     display: flex;

@@ -1,5 +1,10 @@
+.title-admin {
+  color:#ffbe00e6;
+  text-align: center;
+  padding-top: 5%;
+  font-size: 4em;
+}
 .admin {
-  background-color: black;
   display: flex;
   justify-content: space-around;
   .new-project {
@@ -11,17 +16,24 @@
     box-shadow: 0 0 20px #eee;
     margin-top: 5%;
     margin-bottom: 1%;
+
+
     button {
-      color:black;
-      background-color: white;
+      color: #ffbe00e6;
+      border-color: #ffbe00e6;
+      background-color: #242323;
       width: 25%;
       margin-left: 35%;
       margin-bottom: 2em;
     }
+    button:hover {
+      color: white;
+      border-color: #ffbe00e6;
+      background-color: #ffbe00e6;
+    }
     h2 {
       text-align: center;
       margin-bottom: 7%;
-      font-weight: bold;
       margin-top: 2em;
       color: #ffbe00e6;
     }
@@ -51,16 +63,21 @@
     margin-top: 2em;
   }
   button {
-    color:black;
-    background-color: white;
+    color: #ffbe00e6;
+    border-color: #ffbe00e6;
+    background-color: #242323;
     width: 30%;
     margin-left: 35%;
     margin-bottom: 2em;
   }
+  button:hover {
+    color: white;
+    border-color: #ffbe00e6;
+    background-color: #ffbe00e6;
+  }
   h2 {
     text-align: center;
     margin-bottom: 7%;
-    font-weight: bold;
     color: #ffbe00e6;
   }
   form {
@@ -73,4 +90,15 @@
       width: 40%;
     }
   }
+  .all-project {
+    a{
+      color:#ffbe00e6;
+    }
+  }
+  .all-language {
+    a{
+      color:#ffbe00e6;
+    }
+  }
+
 }
