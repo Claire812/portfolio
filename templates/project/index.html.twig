@@ -14,6 +14,7 @@
         </div>
         {% for project in projects %}
             <div class="one-project">
+                <div class="img-project"><img src="/uploads/{{ project.poster }}" alt="image{{ project.name }}" width="70%"></div>
                 <div class="all-items">
                    <div> {{ project.name }}</div>
                    <div> {{ project.description }}</div>
@@ -25,6 +26,7 @@
                     <div>{{ project.date|date("d/m/Y") }}</div>
                     <div><a href="{{ project.link }}">{{ project.link }}</a></div>
                     <div> {{ project.client }}</div>
+
                 </div>
             </div>
         {% endfor %}
