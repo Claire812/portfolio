@@ -1,7 +1,7 @@
 <nav class="component-nav">
     <ul class="nav justify-content-sm-end">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ path('project_index') }}">Projets</a>
@@ -12,9 +12,20 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
         </li>
-        <li class="nav-item">
+        {% if is_granted('ROLE_ADMIN') %}
+        <li>
             <a class="nav-link" href="{{ path('admin_index') }}">Admin</a>
         </li>
+        {% endif %}
+        {% if app.user %}
+            <li>
+            <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        {% else %}
+            <li>
+            <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+            </li>
+        {% endif %}
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
