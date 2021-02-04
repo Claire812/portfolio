@@ -1,13 +1,12 @@
 .project {
-  background-color: black;
   color: white;
-  padding-bottom: 30%;
 
   h1 {
     text-align: center;
     margin-bottom: 5%;
     padding-top: 5%;
     color: #ffbe00e6;
+    font-size: 4em;
   }
   .search {
     form{
@@ -53,6 +52,9 @@
     .all-items {
       justify-content: flex-end;
       width:100%;
+      a{
+        color: #ffbe00e6;
+      }
     }
 
   }

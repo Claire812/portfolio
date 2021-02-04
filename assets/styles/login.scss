@@ -1,5 +1,4 @@
 .login {
-  background-color: black;
   padding-bottom: 28%;
   color: white;
   display: flex;
@@ -7,8 +6,8 @@
   h1{
     color:#ffbe00e6;
     text-align: center;
-    margin-bottom: 5%;
     padding-top: 5%;
+    font-size: 4em;
   }
   form{
     width: 50%;
@@ -18,8 +17,8 @@
     flex-direction: column;
     background-color: #242323;
     color: white;
-   // box-shadow: 0 0 20px #eee;
-    margin-top: 5%;
+   box-shadow: 0 0 20px #eee;
+    margin-top: 15%;
     margin-bottom: 1%;
     padding-top: 3%;
     padding-left: 5%;
@@ -27,14 +26,19 @@
 
 
     button {
-      color:black;
-      background-color: white;
+      color: #ffbe00e6;
+      border-color: #ffbe00e6;
+      background-color: #242323;
       width: auto;
       margin-left: 35%;
       margin-right: 35%;
       margin-bottom: 2em;
       margin-top: 3%;
-      border-color: transparent;
+    }
+    button:hover {
+      color: white;
+      border-color: #ffbe00e6;
+      background-color: #ffbe00e6;
     }
 
   }
