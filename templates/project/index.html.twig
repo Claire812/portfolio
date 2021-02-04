@@ -4,7 +4,14 @@
 
 {% block body %}
     <div class="project">
+
         <h1>Mes projets</h1>
+        <div class="search">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            {{ form_end(form) }}
+        </div>
         {% for project in projects %}
             <div class="one-project">
                 <div class="all-items">
