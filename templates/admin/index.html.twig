@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1 class="title-admin">Espace admin</h1>
+
     <div class="admin">
 
         <div class="new-project">
@@ -22,7 +23,28 @@
             {{ form_widget(form_language) }}
             <button type="submit" class="btn mt-5">Ajouter ce language</button>
             {{ form_end(form_language) }}
+            <div class="all-project">
+                <h2 class="language">Editer un projet</h2>
+                {% for project in projects %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_edit', {'id': project.id}) }}">{{ project.name }} </a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
+            <div class="all-language">
+                <h2 class="language">Editer un language</h2>
+                {% for language in languages %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_edit_language', {'id': language.id}) }}">{{ language.name }} </a>
+                        </li>
+                    </ul>
+                {% endfor %}
+            </div>
         </div>
+
     </div>
 
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Edition Language{% endblock %}
+
+{% block body %}
+    <h1 class="title-edit">Edition de {{ language.name }}</h1>
+    <div class="project-edit">
+        <div class="container-fluid-resource-edit">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-7 profile-main-forms ">
+                    <div class="form-edit">
+                        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <button type="submit" class="edit-button">Editer {{ language.name }}</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
