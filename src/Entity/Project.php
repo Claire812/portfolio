@@ -39,10 +39,6 @@ class Project
      */
     private $client;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Poster::class, mappedBy="project", orphanRemoval=true)
-     */
-    private $poster;
 
     /**
      * @ORM\ManyToMany(targetEntity=Language::class, inversedBy="projects")
@@ -53,6 +49,11 @@ class Project
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $date;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $poster;
 
     public function __construct()
     {
@@ -114,36 +115,6 @@ class Project
     }
 
     /**
-     * @return Collection|Poster[]
-     */
-    public function getPoster(): Collection
-    {
-        return $this->poster;
-    }
-
-    public function addPoster(Poster $poster): self
-    {
-        if (!$this->poster->contains($poster)) {
-            $this->poster[] = $poster;
-            $poster->setProject($this);
-        }
-
-        return $this;
-    }
-
-    public function removePoster(Poster $poster): self
-    {
-        if ($this->poster->removeElement($poster)) {
-            // set the owning side to null (unless already changed)
-            if ($poster->getProject() === $this) {
-                $poster->setProject(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Language[]
      */
     public function getLanguage(): Collection
@@ -175,6 +146,18 @@ class Project
     public function setDate(?\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
 
         return $this;
     }

@@ -3,9 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Language;
-use App\Entity\Poster;
 use App\Entity\Project;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -49,15 +47,11 @@ class ProjectType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
             ])
-            ->add('poster', EntityType::class, [
-                'class' => Poster::class,
-                'choice_label' => 'name',
-                'label_attr' => [
-                    'class' => 'checkbox-custom',
-                ],
-                'multiple' => true,
-                'expanded' => true,
+            ->add('poster', TextType::class, [
+                'label' => 'Image',
+                'required' => false,
             ])
+
         ;
     }
 

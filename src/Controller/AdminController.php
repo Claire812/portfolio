@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Language;
-use App\Entity\Poster;
 use App\Entity\Project;
 use App\Form\LanguageType;
-use App\Form\PosterType;
 use App\Form\ProjectType;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -34,15 +32,6 @@ class AdminController extends AbstractController
         }
 
 
-
-        $poster = new Poster();
-        $formPoster = $this->createForm(PosterType::class, $poster);
-        $formPoster->handleRequest($request);
-        if ($formPoster->isSubmitted() && $formPoster->isValid()) {
-            $entityManager->persist($poster);
-            $entityManager->flush();
-        }
-
         $language = new Language();
         $formLanguage = $this->createForm(LanguageType::class, $language);
         $formLanguage->handleRequest($request);
@@ -52,10 +41,8 @@ class AdminController extends AbstractController
         }
 
 
-
         return $this->render('admin/index.html.twig', [
             'form' => $form->createView(),
-            'form_poster' => $formPoster->createView(),
             'form_language' => $formLanguage->createView(),
         ]);
     }

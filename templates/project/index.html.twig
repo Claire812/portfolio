@@ -3,5 +3,26 @@
 {% block title %}Hello ProjectController!{% endblock %}
 
 {% block body %}
+    <div class="project">
+        <h1>Mes projets</h1>
+        {% for project in projects %}
+            <div class="one-project">
+                <div class="all-items">
+                   <div> {{ project.name }}</div>
+                   <div> {{ project.description }}</div>
+                    <div>
+                        {% for one in project.language %}
+                            {{ one.name }}
+                        {% endfor %}
+                    </div>
+                    <div>{{ project.date|date("d/m/Y") }}</div>
+                    <div>{{ project.link }}</div>
+                    <div> {{ project.client }}</div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
 
 {% endblock %}
