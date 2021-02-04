@@ -1,0 +1,20 @@
+.component-nav{
+  background-color:black;
+  height: 5em;
+  .nav-link{
+    padding: 0.5rem 3rem;
+    color: #e2dfdf;
+  }
+  .nav-link:hover {
+    color: #ffbe00e6;
+  }
+  .nav{
+    padding-right: 2%;
+    padding-top: 1em;
+
+  }
+  .btn-outline-success {
+    color: #ffbe00e6;
+    border-color: #ffbe00e6;
+  }
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <div class="admin">
+        <div class="new-project">
+            <h2>Ajouter un projet</h2>
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+             <button type="submit" class="btn mt-5">Ajouter ce projet</button>
+        {{ form_end(form) }}
+        </div>
+
+        <div class="new-language">
+            <h2 class="language">Ajouter un language</h2>
+            {% form_theme form_language 'bootstrap_4_layout.html.twig' %}
+            {{ form_start(form_language) }}
+            {{ form_widget(form_language) }}
+            <button type="submit" class="btn mt-5">Ajouter un language</button>
+            {{ form_end(form_language) }}
+        </div>
+    </div>
+
+{% endblock %}

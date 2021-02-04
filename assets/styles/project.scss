@@ -1,0 +1,30 @@
+.project {
+  background-color: black;
+  color: white;
+  padding-bottom: 3%;
+  h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    color: #ffbe00e6;
+  }
+  .one-project{
+    background-color: #242323;
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: 0 0 20px #eee;
+    margin-bottom: 2%;
+    font-size: 15pt;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 30%;
+
+    .all-items {
+      justify-content: flex-end;
+      width:100%;
+    }
+
+  }
+}
